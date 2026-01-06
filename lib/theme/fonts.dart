@@ -4,7 +4,7 @@ import 'color_manager.dart';
 
 class AppTextStyle {
 
-  static final TextStyle heading = TextStyle(
+  static const TextStyle heading = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.w600,
     letterSpacing: -0.5,
@@ -12,10 +12,17 @@ class AppTextStyle {
     color: ColorManager.grey900,
   );
 
-  static final TextStyle title = TextStyle(
+  static const TextStyle caption = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 1.4,
     color: ColorManager.grey500,
+  );
+
+  static const TextStyle title = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    height: 1.4,
+    color: ColorManager.grey900,
   );
 }

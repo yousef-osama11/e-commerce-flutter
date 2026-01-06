@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/presentation/screens/sign_up/sign_up.dart';
 import 'package:e_commerce_flutter/theme/fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class InFitApp extends StatelessWidget {
       title: 'InFit',
       theme: ThemeData(fontFamily: 'ReadexPro'),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const SignUp(),
     );
   }
 }
