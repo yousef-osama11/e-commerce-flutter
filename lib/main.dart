@@ -24,13 +24,39 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('InFit'),
-      ),
+      appBar: AppBar(title: const Text('InFit')),
       body: const Center(
-        child: Text(
-          'Welcome to InFit',
-          style: TextStyle(fontSize: 24 , color: ColorManager.grey900),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Regular',
+              style: TextStyle(
+                fontFamily: 'ReadexPro',
+                fontSize: 24,
+                color: ColorManager.grey900,
+                fontWeight: FontWeight.w400
+              ),
+            ),
+            Text(
+              'Medium',
+              style: TextStyle(
+                fontFamily: 'ReadexPro',
+                fontSize: 24,
+                color: ColorManager.grey900,
+                fontWeight: FontWeight.w500
+              ),
+            ),
+            Text(
+              'SemiBold',
+              style: TextStyle(
+                fontFamily: 'ReadexPro',
+                fontSize: 24,
+                color: ColorManager.grey900,
+                fontWeight: FontWeight.w600
+              ),
+            ),
+          ],
         ),
       ),
     );
