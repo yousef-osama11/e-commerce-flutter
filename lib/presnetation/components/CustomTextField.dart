@@ -22,17 +22,14 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  var passwordIconPath = 'images/eye-off.svg';
   var showPassword = false;
+
+  String get passwordIconPath =>
+      showPassword ? "images/eye-on.svg" : "images/eye-off.svg";
 
   void onClickShowPasswordIcon() {
     setState(() {
       showPassword = !showPassword;
-      if (passwordIconPath == "images/eye-off.svg") {
-        passwordIconPath = "images/eye-on.svg";
-      } else {
-        passwordIconPath = "images/eye-off.svg";
-      }
     });
   }
 
@@ -46,6 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       },
       passwordIconPath: passwordIconPath,
       postfixIcon: widget.postfixIcon,
+      prefixIcon: widget.prefixIcon,
       showText: showPassword,
       onClickShowPassword: () {
         onClickShowPasswordIcon();
