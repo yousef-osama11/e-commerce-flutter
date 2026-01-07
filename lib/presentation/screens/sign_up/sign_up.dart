@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import '../../widgets/CustomButton.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+  const SignUp({super.key, this.onClickLogin, this.onClickCreateAccount});
+
+  final Function? onClickLogin;
+  final Function? onClickCreateAccount;
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -23,11 +26,16 @@ class _SignUpState extends State<SignUp> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Already have an account?', style: AppTextStyle.caption),
-            Text(
-              'Log In',
-              style: AppTextStyle.caption.copyWith(
-                decoration: TextDecoration.underline,
-                color: ColorManager.grey900,
+            GestureDetector(
+              onTap: (){
+                widget.onClickLogin?.call();
+              },
+              child: Text(
+                'Log In',
+                style: AppTextStyle.caption.copyWith(
+                  decoration: TextDecoration.underline,
+                  color: ColorManager.grey900,
+                ),
               ),
             ),
           ],
@@ -52,7 +60,7 @@ class _SignUpState extends State<SignUp> {
                 textFieldSection('Confirm Password','Enter your password',true),
 
                 const SizedBox(height: 44),
-                customButton(text: 'Create Account'),
+                customButton(text: 'Create Account',onClick: widget.onClickCreateAccount),
               ],
             ),
           ),
