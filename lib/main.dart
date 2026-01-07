@@ -1,21 +1,26 @@
-import 'package:e_commerce_flutter/presentation/screens/sign_up/sign_up.dart';
+import 'package:e_commerce_flutter/presentation/navigation/navigationRoutes.dart';
 import 'package:e_commerce_flutter/theme/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 
 void main() {
   runApp(const InFitApp());
 }
+final _router = GoRouter(
+  routes: $appRoutes,
+);
 
 class InFitApp extends StatelessWidget {
   const InFitApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _router,
       title: 'InFit',
       theme: ThemeData(fontFamily: 'ReadexPro'),
       debugShowCheckedModeBanner: false,
-      home: const SignUp(),
     );
   }
 }
