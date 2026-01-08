@@ -10,6 +10,7 @@ List<RouteBase> get $appRoutes => [
   $loginScreenRoute,
   $signupScreenRoute,
   $homeScreenRoute,
+  $productDetailsScreenRoute,
 ];
 
 RouteBase get $loginScreenRoute =>
@@ -67,6 +68,32 @@ mixin $HomeScreenRoute on GoRouteData {
 
   @override
   String get location => GoRouteData.$location('/home');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $productDetailsScreenRoute => GoRouteData.$route(
+  path: '/home/product-details',
+  factory: $ProductDetailsScreenRoute._fromState,
+);
+
+mixin $ProductDetailsScreenRoute on GoRouteData {
+  static ProductDetailsScreenRoute _fromState(GoRouterState state) =>
+      const ProductDetailsScreenRoute();
+
+  @override
+  String get location => GoRouteData.$location('/home/product-details');
 
   @override
   void go(BuildContext context) => context.go(location);

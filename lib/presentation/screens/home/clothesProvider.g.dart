@@ -135,7 +135,7 @@ final class ClothesNotifierProvider
   }
 }
 
-String _$clothesNotifierHash() => r'4e6d0f76eaaa45c39393bedfc9c56f129d601ec9';
+String _$clothesNotifierHash() => r'1f00fdfa0cc5c9b51845b3c24f8509d1197aa403';
 
 abstract class _$ClothesNotifier extends $Notifier<ClothesState> {
   ClothesState build();

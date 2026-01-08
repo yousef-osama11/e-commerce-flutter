@@ -1,6 +1,5 @@
 import 'package:e_commerce_flutter/theme/color_manager.dart';
 import 'package:e_commerce_flutter/theme/fonts.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/CustomButton.dart';
 import '../widgets/CustomTextField.dart';
