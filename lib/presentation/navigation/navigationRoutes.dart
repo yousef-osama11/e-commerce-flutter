@@ -43,6 +43,6 @@ class SignupScreenRoute extends GoRouteData with $SignupScreenRoute{
 class HomeScreenRoute extends GoRouteData with $HomeScreenRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return homeScreen();
+    return Homescreen();
   }
 }

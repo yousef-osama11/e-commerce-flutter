@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-Widget customButton({required String text, Widget? prefixIcon, Widget? postfixIcon, Function? onClick}) {
+Widget customButton({String? text, Widget? prefixIcon, Widget? postfixIcon, Function? onClick}) {
+  double startIconPadding = text != null
+  ? 10.0
+  : 0.0;
+
   Widget? startIcon = prefixIcon != null
-      ? Padding(padding: const EdgeInsets.only(right: 10), child: prefixIcon)
+      ? Padding(padding: EdgeInsets.only(right: startIconPadding), child: prefixIcon)
       : null;
 
   Widget? endIcon = postfixIcon != null
@@ -25,7 +29,7 @@ Widget customButton({required String text, Widget? prefixIcon, Widget? postfixIc
         children: [
           startIcon ?? SizedBox(),
           Text(
-            text,
+            text ?? "",
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,
