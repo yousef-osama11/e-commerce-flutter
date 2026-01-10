@@ -32,14 +32,20 @@ class _HomeScreenState extends ConsumerState<Homescreen> {
 class WearableItem {
   final String imagePath;
   final String name;
+  final String description;
   final double price;
   final WearType type;
+  final double rate;
+  final int reviewsCount;
 
   const WearableItem({
     required this.imagePath,
     required this.name,
     required this.price,
     required this.type,
+    required this.description,
+    required this.rate,
+    required this.reviewsCount
   });
 }
 
@@ -50,16 +56,9 @@ Widget _homeScreenContent(WidgetRef ref) {
       ref.read(clothesProvider.notifier).searchForWear(input);
     },
     hint: "Search for clothes...",
-    prefixIcon: SvgPicture.asset("images/search-ic.svg"),
+    prefixIcon: SvgPicture.asset("assets/images/ic_ic_search.svg"),
   );
 
-
-  var polo = WearableItem(
-    imagePath: "images/tshirt_blue.png",
-    name: "polo blue",
-    price: 500,
-    type: WearType.shoes,
-  );
   return Scaffold(
     body: Container(
       color: ColorManager.primaryWhite,
@@ -86,7 +85,7 @@ Widget _homeScreenContent(WidgetRef ref) {
                           width: 52,
                           child: customButton(
                               prefixIcon: SvgPicture.asset(
-                                "images/filter-ic.svg",
+                                "assets/images/ic_filter.svg",
                               ),
                               onClick: (){
                                 // do smth
@@ -106,7 +105,7 @@ Widget _homeScreenContent(WidgetRef ref) {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate((context, index) {
-                  return itemCard(item: wearableItems[index]);
+                  return ItemCard(item: wearableItems[index]);
                 }, childCount: wearableItems.length),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 200,

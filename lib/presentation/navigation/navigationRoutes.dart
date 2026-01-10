@@ -1,4 +1,5 @@
 import 'package:e_commerce_flutter/presentation/screens/home/homeScreen.dart';
+import 'package:e_commerce_flutter/presentation/screens/product_details/product_details.dart';
 import 'package:e_commerce_flutter/presentation/screens/sign_up/sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -46,3 +47,26 @@ class HomeScreenRoute extends GoRouteData with $HomeScreenRoute {
     return Homescreen();
   }
 }
+
+  @TypedGoRoute<ProductDetailsScreenRoute>(
+    path: '/home/product-details',
+  )
+  class ProductDetailsScreenRoute extends GoRouteData
+      with $ProductDetailsScreenRoute {
+
+    const ProductDetailsScreenRoute();
+
+    @override
+    Widget build(BuildContext context, GoRouterState state) {
+      final item = state.extra as WearableItem;
+
+      return ProductDetails(
+        image: item.imagePath,
+        price: item.price,
+        title: item.name,
+        description: item.description,
+        rate: item.rate,
+        reviewerCount: item.reviewsCount
+      );
+    }
+  }

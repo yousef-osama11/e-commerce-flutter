@@ -12,6 +12,14 @@ class AppTextStyle {
     color: ColorManager.grey900,
   );
 
+  static const TextStyle main = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    height: 1.2,
+    color: ColorManager.grey900,
+  );
+
+
   static const TextStyle caption = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,

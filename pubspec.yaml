@@ -71,9 +71,7 @@ flutter:
   # the material Icons class.
 
   assets:
-    - images/
-    - images/eye-off.svg
-    - images/eye-on.svg
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

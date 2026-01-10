@@ -3,56 +3,45 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'homeScreen.dart';
 part 'clothesProvider.g.dart';
 
-List<WearableItem> getFakeWearableItems(){
+List<WearableItem> getFakeWearableItems() {
   return [
     WearableItem(
-      imagePath: "images/shoes.png",
-      name: "Running Shoes",
-      price: 1200,
-      type: WearType.shoes,
-    ),
-    WearableItem(
-      imagePath: "images/tshirt_blue.png",
-      name: "Casual Sneakers Tee",
-      price: 550,
-      type: WearType.shoes,
-    ),
-    WearableItem(
-      imagePath: "images/tshirt_blue.png",
-      name: "Classic T-Shirt",
-      price: 500,
+      imagePath: "https://hourscollection.com/cdn/shop/files/DropShoulderT-shirt-RoyalBlue-product_700x.jpg?v=1762198064",
+      name: "Drop Shoulder T-Shirt",
+      description: "Lightweight running shoes designed for maximum comfort and performance.",
+      price: 39.99,
       type: WearType.tShirt,
+      rate: 3,
+      reviewsCount: 150,
     ),
     WearableItem(
-      imagePath: "images/shoes.png",
-      name: "Sport Style T-Shirt",
+      imagePath: "https://hourscollection.com/cdn/shop/files/DropShoulderHoodie-VintageBlack-ClipTag2_700x.png?v=1762199711",
+      name: "Drop Shoulder Hoodie",
+      description: "A timeless blue t-shirt made from breathable cotton for everyday wear.",
+      price: 69.99,
+      type: WearType.hoodie,
+      rate:4.5,
+      reviewsCount: 155,
+    ),
+    WearableItem(
+      imagePath: "https://hourscollection.com/cdn/shop/files/GreyArcHoodie_700x.jpg?v=1766599721",
+      name: "Arc Zip Hoodie",
+      description: "Performance t-shirt with moisture-wicking fabric for an active lifestyle.",
       price: 600,
-      type: WearType.tShirt,
-    ),
-    WearableItem(
-      imagePath: "images/shoes.png",
-      name: "Slim Fit Pants",
-      price: 900,
-      type: WearType.pants,
-    ),
-    WearableItem(
-      imagePath: "images/tshirt_blue.png",
-      name: "Cotton Pants",
-      price: 750,
-      type: WearType.pants,
-    ),
-    WearableItem(
-      imagePath: "images/tshirt_blue.png",
-      name: "Light Hoodie",
-      price: 850,
       type: WearType.hoodie,
+      rate: 4.8,
+      reviewsCount: 95,
     ),
     WearableItem(
-      imagePath: "images/shoes.png",
-      name: "Winter Hoodie",
-      price: 950,
-      type: WearType.hoodie,
+      imagePath: "https://hourscollection.com/cdn/shop/files/BaggySweatpants-VintageGrey_2_700x.png?v=1762199978",
+      name: "Baggy Sweatpants",
+      description: "Comfortable and stylish slim fit pants suitable for work or casual outings.",
+      price: 74.5,
+      type: WearType.pants,
+      rate: 4.9,
+      reviewsCount: 70,
     ),
+
   ];
 }
 

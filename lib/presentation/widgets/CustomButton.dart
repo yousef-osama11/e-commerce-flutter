@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/theme/color_manager.dart';
 import 'package:flutter/material.dart';
 
 Widget customButton({String? text, Widget? prefixIcon, Widget? postfixIcon, Function? onClick}) {
@@ -21,7 +22,7 @@ Widget customButton({String? text, Widget? prefixIcon, Widget? postfixIcon, Func
       alignment: Alignment.center,
       height: 54,
       decoration: BoxDecoration(
-        color: Color(0xFF3669C9),
+        color: ColorManager.primaryBlue,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -31,7 +32,7 @@ Widget customButton({String? text, Widget? prefixIcon, Widget? postfixIcon, Func
           Text(
             text ?? "",
             style: TextStyle(
-              color: Colors.white,
+              color: ColorManager.primaryWhite,
               fontSize: 14,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
