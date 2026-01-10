@@ -40,7 +40,7 @@ class ProductDetails extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      headerSection(screenName: 'Details'),
+                      headerSection(context: context, screenName: 'Details'),
                       Center(
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -114,7 +114,7 @@ class ProductDetails extends StatelessWidget {
                               Column(
                                 children: [
                                   Text('Price', style: AppTextStyle.caption),
-                                  Text('$price', style: AppTextStyle.title),
+                                  Text("\$$price", style: AppTextStyle.title),
                                 ],
                               ),
                               Expanded(
