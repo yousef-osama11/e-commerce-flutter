@@ -1,3 +1,5 @@
+import 'package:e_commerce_flutter/presentation/screens/cart/CartScreen.dart';
+import 'package:e_commerce_flutter/presentation/screens/cart/widgets/CartItemCard.dart';
 import 'package:e_commerce_flutter/presentation/screens/home/homeScreen.dart';
 import 'package:e_commerce_flutter/presentation/screens/product_details/product_details.dart';
 import 'package:e_commerce_flutter/presentation/screens/sign_up/sign_up.dart';
@@ -45,6 +47,15 @@ class HomeScreenRoute extends GoRouteData with $HomeScreenRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return Homescreen();
+  }
+}
+
+@TypedGoRoute<CartRoute>(path: '/cart')
+@immutable
+class CartRoute extends GoRouteData  with $CartRoute {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return CartScreen();
   }
 }
 
