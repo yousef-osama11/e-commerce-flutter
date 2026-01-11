@@ -88,7 +88,11 @@ Widget _homeScreenContent(WidgetRef ref, BuildContext context) {
                           width: 52,
                           child: customButton(
                               prefixIcon: SvgPicture.asset(
-                                "assets/images/ic_filter.svg",
+                                // "assets/images/ic_filter.svg",
+                                "assets/images/cart-ic.svg",
+                                width: 32,
+                                height: 32,
+                                colorFilter: ColorFilter.mode(ColorManager.primaryWhite, BlendMode.srcIn) ,
                               ),
                               onClick: (){
                                 CartRoute().push(context);
