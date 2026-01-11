@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:e_commerce_flutter/presentation/navigation/navigationRoutes.dart';
 import 'package:e_commerce_flutter/presentation/screens/home/clothesProvider.dart';
 import 'package:e_commerce_flutter/presentation/screens/home/widgets/CategoriesRow.dart';
 import 'package:e_commerce_flutter/presentation/screens/home/widgets/ItemCard.dart';
@@ -25,7 +26,7 @@ class Homescreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<Homescreen> {
   @override
   Widget build(BuildContext context) {
-    return _homeScreenContent(ref);
+    return _homeScreenContent(ref,context);
   }
 }
 
@@ -37,6 +38,7 @@ class WearableItem {
   final WearType type;
   final double rate;
   final int reviewsCount;
+  final String size;
 
   const WearableItem({
     required this.imagePath,
@@ -45,11 +47,12 @@ class WearableItem {
     required this.type,
     required this.description,
     required this.rate,
-    required this.reviewsCount
+    required this.reviewsCount,
+    required this.size
   });
 }
 
-Widget _homeScreenContent(WidgetRef ref) {
+Widget _homeScreenContent(WidgetRef ref, BuildContext context) {
   var wearableItems = ref.watch(clothesProvider).items;
   var searchBar = CustomTextField(
     getCurrentInput: (input){
@@ -88,7 +91,7 @@ Widget _homeScreenContent(WidgetRef ref) {
                                 "assets/images/ic_filter.svg",
                               ),
                               onClick: (){
-                                // do smth
+                                CartRoute().push(context);
                               }
                           ),
                         ),
