@@ -20,7 +20,7 @@ Widget headerSection({
             width: 24,
           ),
         ),
-        Center(child: Text('Details', style: AppTextStyle.main)),
+        Center(child: Text(screenName, style: AppTextStyle.main)),
       ],
     ),
   );
